@@ -97,7 +97,7 @@
                                         <p class="resume-item-title">
                                             Meridian Technical Charter High School, Meridian, ID
                                         </p>
-                                        <p>GPA: 3.75</p>
+                                        <p>GPA: 3.87</p>
                                     </div>
                                     <p class="resume-item-date">Expected: 2027</p>
                                 </div>
@@ -621,15 +621,27 @@
                     <div class="detail-text">
                         <h3>About This Project</h3>
                         <p>
-                            Empty
+                            This project involved implementing a Virtual Private Network, or VPN, directly on a home router rather than on individual
+                            devices, such as a phone or a laptop. Doing this allowes every device connected onto a Wi-Fi network, which includes devices that don't 
+                            normally support VPN software, to be automatically protected.
                         </p>
 
                         <h3>Technical Details</h3>
                         <ul>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
+                            <li><strong>Router Port Configuration:</strong> Replaced stock OS with a Linux-based alternative to support VPN protocols.</li>
+                            <li><strong>Router Custom Firmware:</strong> Mapped UDP/TCP ports to ensure the encrypted tunnel bypasses the local firewall.</li>
+                            <li><strong>Kill Switch:</strong> IP Table rules that drop all packets if the VPN interface goes down.</li>
                         </ul>
+                        <h3>Challenges &amp; Solutions</h3>
+                        <p>
+                            The first problem that I came across during this process was during the installation of the custom firmware. I tried to use a
+                            incompatible file version, which caused the router to brick. I had to preform a Trivial File Transfer Protocol, or TFTP recovery.
+                            It involved settinga  static IP on a computer, connecting it via Ethernet, and pushing the factory frmware back onto the router. Another problem
+                            I experienced was due to the fact that my internet connection was a modem/router combination. When I connected my VPN-enabled router to the modem,
+                            it caused router port configuration problems. In order to fix it, I had to configure the ISP's modem to Bridge Mode, disabling the ISP's routing 
+                            and firewall features. Finally, I was facing issues with the actual hardware with the router aswell, as my router's CPU was maxed out, causing high latency and low speeds.
+                            I found out this was caused by using OpenVPN, so I switched to WireGuard. I also enabled AES-NI, and overclocked the router.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -656,15 +668,26 @@
                     <div class="detail-text">
                         <h3>About This Project</h3>
                         <p>
-                            Empty
+                            This project involved the development of this HTML personal portfolio website. More specifically, front-web development and AI-assisted coding workflows.
+                            This project involves three main languages:  HTML, CSS, and JavaScript. This also involved Responsive Web Design, or RWD, to ensure that the interface 
+                            is funtional and aesthetically consistent across all devices. Through leveraging CSS Flexbox-Grid for the layout and semantic HTML5 for accessibility,
+                            it achieves a clean and modern architecture.
                         </p>
 
                         <h3>Technical Details</h3>
                         <ul>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
+                            <li><strong>Github Linking:</strong> Published code to a Github repository to link changes across multple devices.</li>
+                            <li><strong>CSS Styling:</strong> Seperated the styling from the main .index HTML file, to look more polished.</li>
+                            <li><strong>AI Refinement + Generation:</strong> Utilized AI to refine and generate code.</li>
                         </ul>
+                        <h3>Challenges &amp; Solutions</h3>
+                        <p>
+                            The first issue I had with this project was early on, when I tried to configure github to work in VSCode. I problems with installing the extension, and linking my Github account.
+                            I had to install Git, and go into the git configuration file to add my email and username. Another issue I faced during this project was how the clean layout appeared perfect in Chrome,
+                            but not in FireFox. I had to implement CSS Autoprefixing and Reset Styles, to establish a consistent baseline across all browsers. Similar to the first one, another issue I had was with upbloading 
+                            my site using Github's Pages. The link it gave me led to a 404 error, saying my index.html file was not linked properly. The soltution was in the URL, where I simply just changed it to link directly
+                            to the .html file, instead of the folder it was in. 
+                        </p>     
                     </div>
                 </div>
             </section>
@@ -690,15 +713,24 @@
                     <div class="detail-text">
                         <h3>About This Project</h3>
                         <p>
-                            Empty
+                            This project involved the Linux systems administration and game server virtuatlization to turn a SteamDeck console into a host for a modded Minecraft environment.
+                            This messed with java runtime scripts and environments, the linux file system, and the configuration of network ports to allow people from anywhere to join the server.
                         </p>
 
                         <h3>Technical Details</h3>
                         <ul>
-                            <li><strong>w:</strong> w.</li>
-                            <li><strong>w:</strong> w.</li>
-                            <li><strong>w:</strong> w.</li>
+                            <li><strong>Java Runtime Environment:</strong> Installed and configured Java 21, involving the management of environmental variables.</li>
+                            <li><strong>Permissions & EULA:</strong> Utilized commands chmod, chown, nano, to manage file permissions and edit the eula.txt file.</li>
+                            <li><strong>Static IP Assignment:</strong> Ensured the SteamDeck has a consistent internal IP address within the local network.</li>
+                            <li><strong>Port Mapping:</strong> Configured the home router to foward TCP/UDP Port 25565 to the SteamDeck to bypass the firewall.</li>
                         </ul>
+                        <h3>Challenges &amp; Solutions</h3>
+                        <p>
+                            One of the first issues I ran into were system read-only errors, which was caused by SteamOS Immutability. My solution was to use the command steam-os-readonly disable, and
+                            to use flatpal-based JRE installations to bypass root restrictions. Another issue I had was with high latency caused by resource contention. My fix was tweaking with the JVM arguments
+                            to prioritize CPU threads for the server process over background Steam services. Lastly, when hosting the server, other people would have connectivity issues, which were caused by
+                            CGNAT and firewall blocks. I had to verify port 25565 was open using an external port checker, and I had to confirm the router's NAT settings.
+                        </p>  
                     </div>
                 </div>
             </section>
@@ -725,7 +757,9 @@
                     <div class="detail-text">
                         <h3>About This Project</h3>
                         <p>
-                            Empty
+                            This project involved quad-booting Windows, Kubuntu, Kali, and Mint systems all on the same hard drive for security testing, development, and overall daily use.
+                            This involved partitioning the same drive multiple times, mounting ISO files onto a USB drive with Rufus, and BIOS configuration. This also involved managing the GUID 
+                            Partition Table, or GPT architecture to ensure that each OS has a dedicated primary parition, while sharing a unified EFI System Partition, or ESP.
                         </p>
 
                         <h3>Technical Details</h3>
@@ -742,18 +776,18 @@
                 <div class="section-inner wide">
                     <a href="#projects" class="card-link">&larr; Back to Projects</a>
 
-                    <h2 class="section-title">Arch Linux Virtual Machine</h2>
+                    <h2 class="section-title">Arch Linux Installation</h2>
 
                     <!-- Image Gallery -->
                     <div class="detail-gallery">
-                        <img src="archfastfetch.jpg"
+                        <img src="archfastfetch.png"
                             alt="Project 2 Main Image" class="detail-main-image">
                         <div class="detail-thumbs">
-                            <img src="vpnchangserver.png"
+                            <img src="test.png"
                                 alt="Project 2 Screenshot 1">
-                            <img src="firmwaredownload.png"
+                            <img src="archgreeter.jpg"
                                 alt="Project 2 Screenshot 2">
-                            <img src="routeractivation.png"
+                            <img src="archinstal.jpg"
                                 alt="Project 2 Screenshot 3">
                         </div>
                     </div>
@@ -778,7 +812,7 @@
                 <div class="section-inner wide">
                     <a href="#projects" class="card-link">&larr; Back to Projects</a>
 
-                    <h2 class="section-title">SIEM and IDS/IPS Home Lab Deployment</h2>
+                    <h2 class="section-title">Gentoo Linux Installation </h2>
 
                     <!-- Image Gallery -->
                     <div class="detail-gallery">
@@ -814,7 +848,7 @@
                 <div class="section-inner wide">
                     <a href="#projects" class="card-link">&larr; Back to Projects</a>
 
-                    <h2 class="section-title">Automated Network Vulnerability Scanner</h2>
+                    <h2 class="section-title">SIEM and IDS/IPS Home Lab Deployment</h2>
 
                     <!-- Image Gallery -->
                     <div class="detail-gallery">
