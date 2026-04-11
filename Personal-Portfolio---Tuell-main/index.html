@@ -35,8 +35,6 @@
         <main class="container main">
 
             <section id="home" class="section hero">
-                <img src="https://placehold.co/128x128/818CF8/FFFFFF?text=Ben&font=inter" alt="Ben's Portrait"
-                    class="hero-avatar">
                 <h1>Hi, I'm Benjamin Tuell!</h1>
                 <p class="hero-subtitle">Network Administration and Cybersecurity
                     <p>I am driven by the complex obstacles of modern cybersecurity and networking.
@@ -764,10 +762,18 @@
 
                         <h3>Technical Details</h3>
                         <ul>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
+                            <li><strong>Media Creation:</strong> Downloaded the ISO file for each OS, them mounted it onto a USB with Rufus.</li>
+                            <li><strong>Firmware Optimization:</strong> Optmized the BIOS to ensure that the computer ran smoothly with multiple OS's.</li>
+                            <li><strong>Boot Control:</strong> Managed the GRUB and EFI boot managers for peak efficiency and reliability.</li>
                         </ul>
+                        <h3>Challenges &amp; Solutions</h3>
+                        <p>
+                           My first problem arose when I installed the second operating system, which replaced the GRUB loader of Kubuntu with Kali's, so I couldn't boot into Kubuntu. 
+                           In order to fix it, I had to enable os-prober, which automatically detects other operating systems to ensure it doesn't overwrite anything related to other OS's.
+                           My second problem was after I downloaded all the Linux operating systems, which affected my clock in Windows to be off by several hours. I had to force Linux to use Local Time, which I did through timedatectl set-local-rtc 1 --adjust-system-clock.
+                           Finally, I had an issue with Kali and how it was missing Wi-Fi capabilities, which wasn't the case for Kubuntu and Mint, as Kali is a security tool. 
+                           I had to do a manual firmware injection to ensure Kali has the proper firmware blobs it needed for my specific Wi-Fi card. 
+                        </p>
                     </div>
                 </div>
             </section>
@@ -795,15 +801,24 @@
                     <div class="detail-text">
                         <h3>About This Project</h3>
                         <p>
-                            Empty
+                            This project involved the manual installation of Arch Linux, through the usage of the pacman package manager, downloading of custom greeters + window managers, and 
+                            manual kernel configuration. Unlike other operating systems, Arch has you manually define each and every single component as you see fit, from the partition table, to the desktop compositor.
+
                         </p>
 
                         <h3>Technical Details</h3>
                         <ul>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
+                            <li><strong>Manual Bootstrap + Pacstrap:</strong> This involved the two commands arch-chroot and pacstrap to install the kernel and to enter the new systenm environemnt.</li>
+                            <li><strong>Low-level System Configuration:</strong> This included the configuration of system files, that typically are automated in most other operating systems.</li>
+                            <li><strong>Window Management + Customization:</strong> Involves the choosing of the Xorg display server protocol, and download of the Hyprland window manager.</li>
                         </ul>
+                        <h3>Challenges &amp; Solutions</h3>
+                        <p>
+                           An issue I ran into was not having internet after restarting my computer once the installation was complete, caused by not having services enabled. In order to fix it, I had to download
+                           NetworkManager, and ensure it was enabled on startup in the chroot environment. Another issue I had was with booting into Hyprland, caused by not having all of the dependencies needed.
+                           I had to download the remaining dependencies, and ensure that hyprland detected the dependencies it needed. Finally, I had an isuse with constant screen tearing, caused by missing drivers.
+                           I had to manually identify the hardware, and install the correct drivers via pacman.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -840,6 +855,10 @@
                             <li><strong>w:</strong> w</li>
                             <li><strong>w:</strong> w</li>
                         </ul>
+                        <h3>Challenges &amp; Solutions</h3>
+                        <p>
+                           wasd
+                        </p>
                     </div>
                 </div>
             </section>
@@ -876,6 +895,10 @@
                             <li><strong>w:</strong> w</li>
                             <li><strong>w:</strong> w</li>
                         </ul>
+                        <h3>Challenges &amp; Solutions</h3>
+                        <p>
+                           wasd
+                        </p>
                     </div>
                 </div>
             </section>
