@@ -831,14 +831,14 @@
 
                     <!-- Image Gallery -->
                     <div class="detail-gallery">
-                        <img src="routersettings.png"
+                        <img src="gentooneofetch.png"
                             alt="Project 2 Main Image" class="detail-main-image">
                         <div class="detail-thumbs">
-                            <img src="vpnchangserver.png"
+                            <img src="gentooemerge.jpg"
                                 alt="Project 2 Screenshot 1">
-                            <img src="firmwaredownload.png"
+                            <img src="gentooboot.jpg"
                                 alt="Project 2 Screenshot 2">
-                            <img src="routeractivation.png"
+                            <img src="gentoostart.jpg"
                                 alt="Project 2 Screenshot 3">
                         </div>
                     </div>
@@ -846,18 +846,23 @@
                     <div class="detail-text">
                         <h3>About This Project</h3>
                         <p>
-                            Empty
+                            This project involved the manual compilation of a Linux kernel, and the granular configuration of system-wide flags to optmize software for specific hardware architecture.
+                            It also involved the step-by-step assembly of a root filesystem, management of USE flags that allow maximum customization, and the navigation of technical documentation to troubleshoot bootloader configuration.
                         </p>
 
                         <h3>Technical Details</h3>
                         <ul>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
+                            <li><strong>Portage PackageManager:</strong> Packages in Gentoo are installed with Portage, through the emerge command.</li>
+                            <li><strong>Compilation Environment:</strong> GCC/LLVM with custom CFLAGS.</li>
+                            <li><strong>Target Architecture:</strong> The target architecture for Gentoo was x86_64 (amd64)</li>
                         </ul>
                         <h3>Challenges &amp; Solutions</h3>
                         <p>
-                           wasd
+                           One of the very first issues I ran into was with configuring the kernel, as I had kept misplacing it between /boot and /boot/efi, as the boot partition I set up had multiple copies of /boot. I ended up
+                           unmounting the /boot files, and installing the kernel into /boot/efi. Another issue I had was with with the GRUB bootloader, and how it wasn't giving me the option to boot into gentoo, and only showing me my 
+                           UEFI settings. In order to fix it, I had to regenerate the kernel configuration file, and re-mount grub to the boot partition, as it was accidentally saved to my root folder.
+                           Finally, I had issues with installing the window manager, as when I ran the install command for Hyprland, it kept saying I was missing dependencies. To fix this, I had to manually install every single dependency, and deal with unmasking them aswell.
+                           The two dependencies that I had the most trouble with were aquamarine and LibHyprUtils.
                         </p>
                     </div>
                 </div>
@@ -871,33 +876,34 @@
 
                     <!-- Image Gallery -->
                     <div class="detail-gallery">
-                        <img src="routersettings.png"
+                        <img src="attackimage.png"
                             alt="Project 2 Main Image" class="detail-main-image">
                         <div class="detail-thumbs">
-                            <img src="vpnchangserver.png"
+                            <img src="raspberrypiterminal.png"
                                 alt="Project 2 Screenshot 1">
-                            <img src="firmwaredownload.png"
+                            <img src="traceroute.png"
                                 alt="Project 2 Screenshot 2">
-                            <img src="routeractivation.png"
-                                alt="Project 2 Screenshot 3">
                         </div>
                     </div>
 
                     <div class="detail-text">
                         <h3>About This Project</h3>
                         <p>
-                            Empty
+                            This project involved the architectural design of a segmented SOHO network, and the technical integration of a dedicated SIEM and IDS/IPS attack stack in order to simulate enterprise-level security monitoring.
+                            Through leveraging a Ubiquiti UniFi hardware suite alongside a Raspeberry Pi-based controller, the deployment isolated critical traffic while providing real-time visibility into potential network threats.
                         </p>
 
                         <h3>Technical Details</h3>
                         <ul>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
-                            <li><strong>w:</strong> w</li>
+                            <li><strong>Network Hardware:</strong> Ubiquiti UniFi Security Gateway (USG) paired with a UniFi Switch 8 and Raspberry Pi 4 running as a dedicated local controller and SIEM node.</li>
+                            <li><strong>Security Protocol:</strong> Implementation of Suricata for a signature-based IDS/IPS monitoring and VLAN tagging to isolate IoT devices from the primary production environment.</li>
+                            <li><strong>Logging & Analysis:</strong> Automated log ingestion via a Syslog server, with data visualization and threat analysis managed through ELK Stack.</li>
                         </ul>
                         <h3>Challenges &amp; Solutions</h3>
                         <p>
-                           wasd
+                           The first issue I came across during this project was after I enabled IDS/IPS, the console was flooded with hundreds of alerts for suspicious traffic. I had to preform signature tuning to analyze repeated alerts and manually disable signatures.
+                           Another issue I had was with the fact that heavy logging on a Raspberry Pi lead to high CPU usage and SD card failure. To fix it, I optimized the stack by using Logz.io, to offload the heavy database storage to an external SSD rather than an SD card.
+                           Finally, the last issue I had was caused by how HTTPS/TLS web traffic is encrypted, meaning my IDS/IPS couldn't see the actual data packets passing through the UniFI stack. I had to implement Heuristic and behavioral analysis.
                         </p>
                     </div>
                 </div>
