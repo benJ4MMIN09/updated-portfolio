@@ -432,9 +432,10 @@ body {
 .resume-row {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    align-items: flex-start;
+    align-items: baseline;
+    width: 100%;
 }
+
 
 .resume-item-title {
     font-weight: 600;
