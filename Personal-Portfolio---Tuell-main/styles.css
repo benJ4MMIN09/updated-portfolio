@@ -162,6 +162,18 @@ body {
     font-size: 2.5rem;
     margin-bottom: 0.75rem;
 }
+.hero-photo-placeholder {
+    /* Change these two numbers to adjust the size */
+    width: 150px;           /* Set preferred width (smaller size) */
+    height: 150px;          /* MUST match width for perfect circle */
+    
+    border-radius: 50%;     /* Makes the image a perfect circle */
+    
+    object-fit: cover;      /* Ensures photo covers area without distorting */
+    border: 5px solid #fff; /* Optional: adds a white border */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Optional: adds depth */
+    background-color: #ccc; /* Placeholder background color before image loads */
+}
 
 .hero-subtitle {
     font-size: 1.4rem;
@@ -208,6 +220,17 @@ body {
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 1rem;
+}
+.hero-description {
+    max-width: 800px;    /* Prevents the text from stretching too wide */
+    margin: 0 auto;      /* Keeps the container centered on the page */
+    text-align: left;    /* Makes the text much cleaner to read */
+    line-height: 1.7;    /* Adds a bit more breathing room between lines */
+}
+
+.hero-description p {
+    margin-bottom: 1.5rem; /* Better spacing between paragraphs */
+    color: #444;           /* A slightly softer black is easier on the eyes */
 }
 
 .tag-pill {
