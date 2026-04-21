@@ -222,10 +222,10 @@ body {
     margin-bottom: 1rem;
 }
 .hero-description {
-    max-width: 800px;    /* Prevents the text from stretching too wide */
-    margin: 0 auto;      /* Keeps the container centered on the page */
-    text-align: left;    /* Makes the text much cleaner to read */
-    line-height: 1.7;    /* Adds a bit more breathing room between lines */
+    max-width: 800px;    
+    margin: 0 auto;     
+    text-align: left;    
+    line-height: 1.7;    
 }
 
 .hero-description p {
