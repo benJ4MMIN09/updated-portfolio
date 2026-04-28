@@ -365,29 +365,7 @@
                         </div>
                     </article>
 
-                    <!-- Project Card 8 -->
-                    <article class="card project-card">
-                        <img src="homelab.avif"
-                            alt="Project 4 Screenshot" class="card-image">
-                        <div class="card-body">
-                            <h3 class="card-title">SIEM and IDS/IPS Home Lab Deployment</h3>
-                            <p class="card-text">
-                                Implemented and configured a prosumer-grade SOHO network architecture designed for security monitoring
-                                and traffic segementation, utilizing a Ubiquiti UniFi stack, alongside a Raspberry Pi controller.
-                            </p>
-                            <div class="tag-list">
-                                <span class="tag-pill">Network Security</span> 
-                                <span class="tag-pill">Threat Detection</span>
-                                <span class="tag-pill">Cybersecurity</span>
-                                <span class="tag-pill">Raspberry Pi</span>
-                                <span class="tag-pill">SOHO Infrastructure</span>
-
-                            </div>
-                            <div class="card-footer">
-                                <a href="#project-detail-8" class="card-link">View Details</a>
-                            </div>
-                        </div>
-                    </article>
+                    
 
                 </div>
             </section>
@@ -848,46 +826,7 @@
                 </div>
             </section>
 
-            <section id="project-detail-8" class="section section-card project-detail-page">
-                <div class="section-inner wide">
-                    <a href="#projects" class="card-link">&larr; Back to Projects</a>
-
-                    <h2 class="section-title">SIEM and IDS/IPS Home Lab Deployment</h2>
-
-                    <!-- Image Gallery -->
-                    <div class="detail-gallery">
-                        <img src="attackimage.png"
-                            alt="Project 2 Main Image" class="detail-main-image">
-                        <div class="detail-thumbs">
-                            <img src="raspberrypiterminal.png"
-                                alt="Project 2 Screenshot 1">
-                            <img src="traceroute.png"
-                                alt="Project 2 Screenshot 2">
-                        </div>
-                    </div>
-
-                    <div class="detail-text">
-                        <h3>About This Project</h3>
-                        <p>
-                            This project involved the architectural design of a segmented SOHO network, and the technical integration of a dedicated SIEM and IDS/IPS attack stack in order to simulate enterprise-level security monitoring.
-                            Through leveraging a Ubiquiti UniFi hardware suite alongside a Raspeberry Pi-based controller, the deployment isolated critical traffic while providing real-time visibility into potential network threats.
-                        </p>
-
-                        <h3>Technical Details</h3>
-                        <ul>
-                            <li><strong>Network Hardware:</strong> Ubiquiti UniFi Security Gateway (USG) paired with a UniFi Switch 8 and Raspberry Pi 4 running as a dedicated local controller and SIEM node.</li>
-                            <li><strong>Security Protocol:</strong> Implementation of Suricata for a signature-based IDS/IPS monitoring and VLAN tagging to isolate IoT devices from the primary production environment.</li>
-                            <li><strong>Logging & Analysis:</strong> Automated log ingestion via a Syslog server, with data visualization and threat analysis managed through ELK Stack.</li>
-                        </ul>
-                        <h3>Challenges &amp; Solutions</h3>
-                        <p>
-                           The first issue I came across during this project was after I enabled IDS/IPS, the console was flooded with hundreds of alerts for suspicious traffic. I had to preform signature tuning to analyze repeated alerts and manually disable signatures.
-                           Another issue I had was with the fact that heavy logging on a Raspberry Pi lead to high CPU usage and SD card failure. To fix it, I optimized the stack by using Logz.io, to offload the heavy database storage to an external SSD rather than an SD card.
-                           Finally, the last issue I had was caused by how HTTPS/TLS web traffic is encrypted, meaning my IDS/IPS couldn't see the actual data packets passing through the UniFI stack. I had to implement Heuristic and behavioral analysis.
-                        </p>
-                    </div>
-                </div>
-            </section>
+           
 
         </div>
     </div>
