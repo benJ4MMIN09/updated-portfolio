@@ -254,6 +254,26 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
+/* 1. The Container: Forces items to center if they wrap */
+.cert-grid {
+    display: flex !important;   /* !important ensures it overrides any hidden grid settings */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* 2. The Cards: Ensures they don't lean left or behave like grid items */
+.cert-grid .cert-card {
+    flex: 0 1 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    margin: 0 !important;      /* Overrides any auto-margins from other classes */
+}
+
 .card {
     background-color: #ffffff;
     border-radius: 1rem;
