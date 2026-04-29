@@ -245,10 +245,9 @@ body {
 
 /* Cards */
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;       /* Allows cards to move to the next line */
-    justify-content: center; /* Centers cards on every row */
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .card-grid-2 {
@@ -267,6 +266,14 @@ body {
 .project-card {
     flex: 1 1 300px; 
     max-width: 350px; /* Adjust based on your preference */
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers the bottom row */
+    gap: 2rem;
+    padding: 1rem 0;
 }
 
 .project-card:hover {
